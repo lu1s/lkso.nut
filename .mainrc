@@ -1,0 +1,58 @@
+echo "LKSO V0.2"
+
+# MAIN SOURCE FILE FOR THE LKSO TRUSTED DEVELOPMENT ENV
+# A directory of the user must be created first within the
+# base root directory in this case / for this file to be
+# sourced properly
+
+cd /`whoami`/
+
+## The goals of the init file is to teleport all the
+## environment to the portable device in a secure
+## encrypted layer for basic functions and services
+
+## The whoami and / (root) directories need to be 
+## overriden or resolved for the property portable
+## operating system to live
+
+## All users of the lkso device will live in the
+## lkso dimension and will teleport through the lucky
+## network protocol for a secure and untracable communication
+## between the devices, meaning that if a user is performing
+## tasks in one lkso device then that same user can not use
+## its power in any other lkso device as the same user while
+## each user can be either a human user or an agent user
+
+# KBOOM
+# This is the main sourcer alias for the LKSO development
+# environment. Just call kboom or KBOOM every time you wish
+# to reload the complete environment.
+alias kboom="source /.lkso/.mainrc && source /`whoami`/.userc && echo \"KBOOMED OK!\""
+
+# kcopy and kpaste
+# Pipes to or from the clipboard.
+# Works as using pbcopy in mac
+# You need to install xsel first.
+alias kcopy="xsel --clipboard --input"
+alias kpaste="xsel --clipboard --output"
+
+# pbcopy deprecation reminder
+alias pbcopy="echo \"kcopy now!\""
+alias pbpaste="echo \"kpaste now!\""
+
+# kboom
+# Sources your user directorie's .rc file
+#alias kboom="source /`whoami`/.userc && echo \"KBOOM\""
+# myrc
+# Opens the editor of the user's .rc file
+# vim is required
+alias myrc="vim /`whoami`/.userc"
+alias krc="vim /.lkso/.mainrc"
+
+# sweetspot
+# Goes to home folder
+alias sweetspot="cd /`whoami`/_current_/"
+
+# now rc the user rc file
+source /`whoami`/.userc
+
